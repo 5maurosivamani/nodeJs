@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI - Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="/bmiCalculator" method="post">
+        <div class="container">
+            <h1 class="heading">BMI Calculator</h1>
+            <div class="height-box">
+                <h4 class="height-text">HEIGHT</h4>
+                <h4 class="height" ><span class="value">133</span> <span class="unit">cm</span></h4>
+                <input type="range" name="height" id="height" class="slider" max="200">
+            </div>
+            <div class="weight-box">
+                <h4 class="weight-text">WEIGHT</h4>
+                <h4 class="weight" ><span class="value">133</span> <span class="unit">kg</span></h4>
+                <input type="range" name="weight" id="weight" class="slider" max="200">
+            </div>
+            <div class="text-center">
+                <button class="calculate" type="submit" name="calculate" id="calculate">
+                    Calculate
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        document.querySelectorAll("input")[0].addEventListener("input", function(){
+            document.querySelector(".height .value").textContent = this.value;
+        });
+        document.querySelectorAll("input")[1].addEventListener("input", function(){
+            document.querySelector(".weight .value").textContent = this.value;
+        });
+    </script>
+</body>
+</html>
